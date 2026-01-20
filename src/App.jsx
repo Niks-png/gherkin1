@@ -1,3 +1,4 @@
+import ProfilePictureFeature from './components/ProfilePictureFeature.jsx';
 import { useState } from 'react';
 import './App.css';
 import Translations from './components/Translations.jsx';
@@ -110,7 +111,10 @@ Kāpēc svarīgs?
     }
   ];
 
-  return (
+  <div>
+    <ProfilePictureFeature />
+    {/* Pārējais saturs */}
+  </div>
     <div style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
