@@ -111,155 +111,49 @@ Kāpēc svarīgs?
     }
   ];
 
-  <div>
-    <ProfilePictureFeature />
-    {/* Pārējais saturs */}
-  </div>
-    <div style={{
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      padding: '40px 20px'
-    }}>
-      <div style={{
-        maxWidth: '900px',
-        margin: '0 auto'
-      }}>
-        {/* Gherkin Translations Section */}
-        <Translations />
-        
-        {/* Funkcionālās Iezīmes Section */}
-        <div style={{ marginTop: '60px' }}>
-          <h1 style={{
-            textAlign: 'center',
-            color: 'white',
-            fontSize: '2.5rem',
-            marginBottom: '20px',
-            textShadow: '2px 2px 4px rgba(0,0,0,0.2)'
-          }}>
-            Funkcionālās Iezīmes - Konspekts
-          </h1>
-          
-          <p style={{
-            textAlign: 'center',
-            color: 'rgba(255,255,255,0.9)',
-            fontSize: '1.1rem',
-            marginBottom: '40px'
-          }}>
-            Noklikšķini uz jautājuma, lai redzētu atbildi
-          </p>
+  return (
+    <>
+      <ProfilePictureFeature />
 
-          <div style={{
-            display: 'grid',
-            gap: '20px'
-          }}>
-            {sections.map((section) => (
-              <div
-                key={section.id}
-                style={{
-                  background: 'white',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-                  transition: 'transform 0.2s, box-shadow 0.2s',
-                  cursor: 'pointer'
-                }}
-                onClick={() => setActiveSection(activeSection === section.id ? null : section.id)}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 6px 12px rgba(0,0,0,0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-                }}
-              >
-                <div style={{
-                  padding: '20px',
-                  background: activeSection === section.id ? '#667eea' : '#f7fafc',
-                  color: activeSection === section.id ? 'white' : '#2d3748',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center'
-                }}>
-                  <h2 style={{
-                    margin: 0,
-                    fontSize: '1.3rem',
-                    fontWeight: '600'
-                  }}>
-                    {section.title}
-                  </h2>
-                  <span style={{
-                    fontSize: '1.5rem',
-                    transition: 'transform 0.3s',
-                    transform: activeSection === section.id ? 'rotate(180deg)' : 'rotate(0)',
-                    display: 'inline-block'
-                  }}>
-                    ▼
-                  </span>
+      <div
+        style={{
+          minHeight: '100vh',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          padding: '40px 20px'
+        }}
+      >
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <Translations />
+
+          <div style={{ marginTop: '60px' }}>
+            <h1 style={{ color: 'white', textAlign: 'center' }}>
+              Funkcionālās Iezīmes - Konspekts
+            </h1>
+
+            <div style={{ display: 'grid', gap: '20px' }}>
+              {sections.map((section) => (
+                <div
+                  key={section.id}
+                  onClick={() =>
+                    setActiveSection(
+                      activeSection === section.id ? null : section.id
+                    )
+                  }
+                >
+                  {section.title}
+
+                  {activeSection === section.id && (
+                    <div style={{ whiteSpace: 'pre-line' }}>
+                      {section.content}
+                    </div>
+                  )}
                 </div>
-                
-                {activeSection === section.id && (
-                  <div style={{
-                    padding: '25px',
-                    color: '#2d3748',
-                    lineHeight: '1.8',
-                    whiteSpace: 'pre-line',
-                    fontSize: '1.05rem',
-                    animation: 'fadeIn 0.3s ease-in'
-                  }}>
-                    {section.content}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div style={{
-            marginTop: '40px',
-            padding: '25px',
-            background: 'rgba(255,255,255,0.95)',
-            borderRadius: '12px',
-            textAlign: 'center',
-            boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
-          }}>
-            <h3 style={{
-              color: '#667eea',
-              marginBottom: '15px',
-              fontSize: '1.5rem'
-            }}>
-              Galvenie secinājumi
-            </h3>
-            <ul style={{
-              textAlign: 'left',
-              color: '#2d3748',
-              lineHeight: '1.8',
-              maxWidth: '700px',
-              margin: '0 auto',
-              fontSize: '1.05rem'
-            }}>
-              <li>Funkcionālās iezīmes fokusējas uz lietotāja vērtību</li>
-              <li>Lietotājstāsti seko "Kā-es vēlos-lai" formātam</li>
-              <li>Scenāriji izmanto Given-When-Then struktūru</li>
-              <li>Rubika kubs palīdz skatīties no dažādām perspektīvām</li>
-              <li>Happy Path parāda ideālo ceļu bez kļūdām</li>
-            </ul>
+              ))}
+            </div>
           </div>
         </div>
-
-        <style>{`
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(-10px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-        `}</style>
       </div>
-    </div>
+    </>
   );
 }
 
