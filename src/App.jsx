@@ -45,14 +45,14 @@ Lietotājstāsts ir īss, vienkāršs apraksts no lietotāja perspektīvas.`
       title: 'Kā veidot scenārijus?',
       content: `Scenāriji tiek veidoti Gherkin sintaksē:
 
-Given (Dotais) - sākuma nosacījumi
-When (Kad) - darbība
+Given (kad) - sākuma nosacījumi
+When (ja) - darbība
 Then (Tad) - sagaidāmais rezultāts
 
 Piemērs:
-Given lietotājs ir ielogojies sistēmā
-When lietotājs noklikšķina uz "Pievienot grozam"
-Then prece tiek pievienota grozam
+kad lietotājs ir ielogojies sistēmā
+ja lietotājs noklikšķina uz "Pievienot grozam"
+tad prece tiek pievienota grozam
 
 Cik daudz scenāriju?
 - Nav stingra limita
