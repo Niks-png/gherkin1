@@ -111,19 +111,20 @@ Kāpēc svarīgs?
   ];
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f0f2f5' }}>
-      {/* Gherkin Translations Section */}
-      <Translations />
-      
-      {/* Funkcionālās Iezīmes Section */}
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      padding: '40px 20px'
+    }}>
       <div style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        padding: '40px 20px'
+        maxWidth: '900px',
+        margin: '0 auto'
       }}>
-        <div style={{
-          maxWidth: '900px',
-          margin: '0 auto'
-        }}>
+        {/* Gherkin Translations Section */}
+        <Translations />
+        
+        {/* Funkcionālās Iezīmes Section */}
+        <div style={{ marginTop: '60px' }}>
           <h1 style={{
             textAlign: 'center',
             color: 'white',

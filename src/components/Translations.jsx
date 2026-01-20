@@ -2,10 +2,10 @@ import './Translations.css';
 
 function Translations() {
   const gherkinTerms = [
-    { english: 'Feature', latvian: 'Funkcionālā iezīme' },
-    { english: 'Background', latvian: 'kontekts' },
+    { english: 'Feature', latvian: 'Funkcionalitāte' },
+    { english: 'Background', latvian: 'Konteksts' },
     { english: 'Scenario', latvian: 'Scenārijs' },
-    { english: 'Scenario Outline', latvian: 'Scenārijs pēc parauga' },
+    { english: 'Scenario Outline', latvian: 'Scenārija struktūra' },
     { english: 'Examples', latvian: 'Piemēri' },
     { english: 'Given', latvian: 'Kad' },
     { english: 'When', latvian: 'Ja' },
@@ -15,8 +15,16 @@ function Translations() {
   ];
 
   return (
-    <div className="translations-container ">
-      <h1>Gherkin Termini</h1>
+    <div className="translations-container">
+      <h1 style={{
+        textAlign: 'center',
+        color: 'white',
+        fontSize: '2.5rem',
+        marginBottom: '20px',
+        textShadow: '2px 2px 4px rgba(0,0,0,0.2)'
+      }}>
+        Gherkin Termini
+      </h1>
       <table className="translations-table">
         <thead>
           <tr>
