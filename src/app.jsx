@@ -1,6 +1,5 @@
-import React from 'react';
 import './App.css';
-import Translations from './components/translations';
+import Translations from './components/Translations';
 
 function App() {
   return (
